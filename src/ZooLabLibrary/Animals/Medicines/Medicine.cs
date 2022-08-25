@@ -1,4 +1,4 @@
-﻿namespace ZooLab.Animals.Medicines;
+﻿namespace ZooLabLibrary.Animals.Medicines;
 
 public abstract class Medicine
 {
