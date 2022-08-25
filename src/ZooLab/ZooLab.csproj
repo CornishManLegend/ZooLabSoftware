@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\tests\ZooLab.Test\ZooLab.Test.csproj" />
+    <ProjectReference Include="..\..\tests\ZooLabLibrary.Test\ZooLabLibrary.Test.csproj" />
+    <ProjectReference Include="..\ZooLabLibrary\ZooLabLibrary.csproj" />
+  </ItemGroup>
+
 </Project>

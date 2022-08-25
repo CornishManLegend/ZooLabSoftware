@@ -5,6 +5,8 @@ namespace ZooLabLibrary.Animals
 {
     public abstract class Animal
     {
+        private static int _currentId = 1;
+        public int Id { get; }
         public bool IsSick { get; set; }
         public abstract List<Medicine> NeededMedicine { get; set; }
         public abstract List<Animals> FriendlyAnimals { get; }
