@@ -1,7 +1,6 @@
 ﻿
 namespace ZooLabLibrary.Employees;
 
-
 public class Veterinarian : IEmployee
 {
     public string FirstName { get; set; }
@@ -12,7 +11,6 @@ public class Veterinarian : IEmployee
         FirstName = firstName;
         LastName = lastName;
     }
-
 
     public override string ToString()
     {

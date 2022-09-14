@@ -14,6 +14,14 @@ namespace ZooLabLibrary.Animals
         public abstract int RequiredSpaceSqFt { get; }
         public abstract Animals Type { get; }
 
+        public virtual bool IsFriendlyWithAnimal(Animal animal)
+        {
+            if (FriendlyAnimals.Contains(animal.Type))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
 

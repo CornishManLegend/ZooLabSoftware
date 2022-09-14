@@ -37,7 +37,7 @@ namespace ZooLabLibrary.Enclosures
 
             Animals.Add(animal);
 
-            Console.WriteLine("New "+ animal.Type + " " + animal.Id+ " added to enclosure "+ this.Name + " in zoo "+ ParentZoo.Location);
+            Console.WriteLine("New "+ animal.Type + " " + animal.Id+ " added to enclosure " + this.Name + " in zoo "+ ParentZoo.Location);
         }
     }
 
