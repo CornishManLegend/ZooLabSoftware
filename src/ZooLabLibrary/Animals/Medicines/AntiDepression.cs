@@ -2,5 +2,5 @@
 
 public class AntiDepression : Medicine
 {
-    
+    public override string MedicineType { get; } = "AntiDepression";
 }

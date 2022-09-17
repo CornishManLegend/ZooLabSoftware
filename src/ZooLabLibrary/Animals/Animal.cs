@@ -1,27 +1,35 @@
-﻿using ZooLabLibrary.Animals.Foods;
+﻿using ZooLab.Animals;
+using ZooLabLibrary.Animals.Foods;
 using ZooLabLibrary.Animals.Medicines;
 
 namespace ZooLabLibrary.Animals
 {
     public abstract class Animal
     {
-        private static int _currentId = 1;
-        public int Id { get; }
-        public bool IsSick { get; set; }
-        public abstract List<Medicine> NeededMedicine { get; set; }
-        public abstract List<Animals> FriendlyAnimals { get; }
-        public abstract List<Food> FavouriteFood { get; }
-        public abstract int RequiredSpaceSqFt { get; }
-        public abstract Animals Type { get; }
 
-        public virtual bool IsFriendlyWithAnimal(Animal animal)
+        public abstract int RequiredSpaceSqFt { get; }
+        public abstract string[] FavouriteFood { get; }
+        public List<FeedTime> FeedTimes { get; } = new List<FeedTime>();
+        public List<int> FeedScheduale { get; private set; } = new List<int>();
+        public virtual bool IsSick { get; set; } = false;
+        public int ID { get; private set; }
+
+        //protected Animal (List<FeedTime> feedTimes, List<int> feedScheduale, bool isSick, int iD)
+        //{
+        //    FeedTimes = feedTimes;
+        //    FeedScheduale = feedScheduale;
+        //    IsSick = isSick;
+        //    ID = iD;
+        //}
+
+        public abstract bool IsFriendlyWith(Animal animal);
+        public virtual void Feed(Food food) { }
+        public void AddScheduale(List<int> hours) 
         {
-            if (FriendlyAnimals.Contains(animal.Type))
-            {
-                return true;
-            }
-            return false;
+            FeedScheduale = hours;
         }
+        public virtual void Heal(Medicine medicine) { }
+
     }
 }
 

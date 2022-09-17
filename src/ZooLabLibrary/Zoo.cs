@@ -14,59 +14,59 @@ namespace ZooLabLibrary
     public class Zoo
     {
 
-        public IConsole Console { get; set; } = new DefaultConsole();
+        //public IConsole Console { get; set; } = new DefaultConsole();
 
-        public List<Enclosure> Enclosures { get; set; }
+        //public List<Enclosure> Enclosures { get; set; }
 
-        public List<IEmployee> Employees { get; set; }
+        //public List<IEmployee> Employees { get; set; }
 
-        public string Location { get; set; }
+        //public string Location { get; set; }
 
-        public Zoo(string location)
-        {
-            Location = location;
-            Enclosures = new List<Enclosure>();
-            Employees = new List<IEmployee>();
-        }
+        //public Zoo(string location)
+        //{
+        //    Location = location;
+        //    Enclosures = new List<Enclosure>();
+        //    Employees = new List<IEmployee>();
+        //}
 
-        public void HireEmployee(IEmployee employee)
-        {
-            Employees.Add(employee);
+        //public void HireEmployee(IEmployee employee)
+        //{
+        //    Employees.Add(employee);
 
-            Console.WriteLine("Employee Petrov Ivan is hired as a veterinar1");
-        }
+        //    Console.WriteLine("Employee Petrov Ivan is hired as a veterinar1");
+        //}
 
-        public void AddEnclosure(Enclosure enclosure)
-        {
-            Enclosures.Add(enclosure);
+        //public void AddEnclosure(Enclosure enclosure)
+        //{
+        //    Enclosures.Add(enclosure);
 
-            Console.WriteLine("New Enclosure added: " + enclosure.Name);
-        }
+        //    Console.WriteLine("New Enclosure added: " + enclosure.Name);
+        //}
 
-        public Enclosure FindAvailableEnclosure(Animal animalWithoutEnclosure)
-        {
-            foreach (var enclosure in Enclosures)
-            {
-                int availableSquare = enclosure.SquareFeet;
+        //public Enclosure FindAvailableEnclosure(Animal animalWithoutEnclosure)
+        //{
+        //    foreach (var enclosure in Enclosures)
+        //    {
+        //        int availableSquare = enclosure.SquareFeet;
 
-                foreach (var animal in enclosure.Animals)
-                {
-                    if (animalWithoutEnclosure.IsFriendlyWithAnimal(animal))
-                        availableSquare -= animal.RequiredSpaceSqFt;
-                    else
-                        availableSquare = -1;
-                }
+        //        foreach (var animal in enclosure.Animals)
+        //        {
+        //            if (animalWithoutEnclosure.IsFriendlyWithAnimal(animal))
+        //                availableSquare -= animal.RequiredSpaceSqFt;
+        //            else
+        //                availableSquare = -1;
+        //        }
 
-                if (availableSquare >= animalWithoutEnclosure.RequiredSpaceSqFt)
-                {
+        //        if (availableSquare >= animalWithoutEnclosure.RequiredSpaceSqFt)
+        //        {
 
-                    return enclosure;
-                }
+        //            return enclosure;
+        //        }
 
-            }
+        //    }
 
-            throw new NoAvailableEnclosureException("There is no enclosure available");
-        }
+        //    throw new NoAvailableEnclosureException("There is no enclosure available");
+        //}
 
     }
 }

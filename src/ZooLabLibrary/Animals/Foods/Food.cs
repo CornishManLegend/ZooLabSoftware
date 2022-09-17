@@ -2,5 +2,5 @@
 
 public abstract class Food
 {
-    
+    public abstract string FoodType { get; }
 }

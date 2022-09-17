@@ -2,5 +2,5 @@
 
 public class AntiInflammatory : Medicine
 {
-    
+    public override string MedicineType { get; } = "AntiInflammatory";
 }
