@@ -29,7 +29,12 @@ public class Veterinarian : IEmployee
 
     public bool HasAnimalExperience(Animal animal)
     {
-        if(this.AnimalExperiences.Contains(animal))
+        var animalNames = new List<string>();
+        foreach (Animal ani in this.AnimalExperiences)
+        {
+            animalNames.Add(ani.GetType().Name);
+        }
+        if (animalNames.Contains(animal.GetType().Name))
             return true;
         return false;
     }
