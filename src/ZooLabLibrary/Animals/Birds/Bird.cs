@@ -2,8 +2,6 @@
 {
     public abstract class Bird : Animal
     {
-        public bool IsHungry { get; set; } = true;
-
         protected Bird() {}
 
         protected Bird(bool isSick)
