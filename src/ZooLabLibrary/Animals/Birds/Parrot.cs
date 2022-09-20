@@ -16,12 +16,13 @@ namespace ZooLabLibrary.Animals.Birds
         };
 
         public Parrot() { }
-        public Parrot(bool isSick) : base(isSick)
+        public Parrot(int iD) : base(iD) {}
+        public Parrot(int iD, bool isSick) : base(iD, isSick)
         {
             IsSick = isSick;
         }
 
-        public Parrot(bool isSick, bool isHungry) : base(isSick, isHungry)
+        public Parrot(int iD, bool isSick, bool isHungry) : base(iD, isSick, isHungry)
         {
             IsSick = isSick;
             IsHungry = isHungry;

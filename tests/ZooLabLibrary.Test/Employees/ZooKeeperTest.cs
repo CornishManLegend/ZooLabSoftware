@@ -21,7 +21,7 @@ namespace ZooLabLibrary.Test.Employees
         [Fact]
         public void ShouldBeAbleToCreateZooKeeperWithExperiences()
         {
-            var experiences = new List<Animal>() { new Parrot(), new Penguin() };
+            var experiences = new List<Animal>() { new Parrot(0), new Penguin(1) };
             ZooKeeper zooKeeper = new ZooKeeper(firstName: "John", lastName: "Silver", animalExperiences: experiences);
             Assert.NotNull(zooKeeper);
         }
@@ -45,8 +45,8 @@ namespace ZooLabLibrary.Test.Employees
         {
             ZooKeeper zooKeeper = new ZooKeeper(firstName: "John", lastName: "Silver");
             zooKeeper.AddAnimalExperience(new Parrot());
-            var parrot = new Parrot();
-            var penguin = new Penguin();
+            var parrot = new Parrot(1);
+            var penguin = new Penguin(2);
             Assert.True(zooKeeper.HasAnimalExperience(parrot));
             Assert.False(zooKeeper.HasAnimalExperience(penguin));
         }
@@ -56,9 +56,9 @@ namespace ZooLabLibrary.Test.Employees
         {
             ZooKeeper zooKeeper = new ZooKeeper(firstName: "John", lastName: "Silver");
             zooKeeper.AddAnimalExperience(new Parrot());
-            var parrot = new Parrot();
+            var parrot = new Parrot(1);
             parrot.IsHungry = true;
-            var penguin = new Penguin();
+            var penguin = new Penguin(2);
             penguin.IsHungry = true;
             Assert.True(zooKeeper.FeedAnimal(parrot));
             Assert.False(parrot.IsHungry);

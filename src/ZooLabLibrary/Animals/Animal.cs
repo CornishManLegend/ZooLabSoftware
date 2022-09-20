@@ -15,13 +15,11 @@ namespace ZooLabLibrary.Animals
         public bool IsHungry { get; set; } = false;
         public int ID { get; private set; }
 
-        //protected Animal (List<FeedTime> feedTimes, List<int> feedScheduale, bool isSick, int iD)
-        //{
-        //    FeedTimes = feedTimes;
-        //    FeedScheduale = feedScheduale;
-        //    IsSick = isSick;
-        //    ID = iD;
-        //}
+        protected Animal() {}
+        protected Animal(int iD)
+        {
+            ID = iD;
+        }
 
         public abstract bool IsFriendlyWith(Animal animal);
         public virtual void Feed(Food food) { }

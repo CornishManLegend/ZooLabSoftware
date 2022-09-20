@@ -11,12 +11,13 @@ namespace ZooLabLibrary.Animals.Birds
         };
 
         public Penguin() { }
-        public Penguin(bool isSick) : base(isSick)
+        public Penguin(int iD) : base(iD) { }
+        public Penguin(int iD, bool isSick) : base(iD, isSick)
         {
             IsSick = isSick;
         }
 
-        public Penguin(bool isSick, bool isHungry) : base(isSick, isHungry)
+        public Penguin(int iD, bool isSick, bool isHungry) : base(iD, isSick, isHungry)
         {
             IsSick = isSick;
             IsHungry = isHungry;

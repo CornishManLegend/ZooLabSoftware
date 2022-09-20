@@ -26,7 +26,7 @@ namespace ZooLabLibrary.Test.Animals.Birds
         [Fact]
         public void ShouldBeAbleToCreateSickParrot()
         {
-            Parrot parrot = new Parrot(isSick: true);
+            Parrot parrot = new Parrot(iD: 0, isSick: true);
             Assert.NotNull(parrot);
             Assert.True(parrot.IsSick);
         }
@@ -34,7 +34,7 @@ namespace ZooLabLibrary.Test.Animals.Birds
         [Fact]
         public void ShouldBeAbleToCreateSickAndHungryParrot()
         {
-            Parrot parrot = new Parrot(isSick: true, isHungry: true);
+            Parrot parrot = new Parrot(iD: 0, isSick: true, isHungry: true);
             Assert.NotNull(parrot);
             Assert.True(parrot.IsSick);
             Assert.True(parrot.IsHungry);
@@ -43,7 +43,7 @@ namespace ZooLabLibrary.Test.Animals.Birds
         [Fact]
         public void ShouldBeAbleToReturnRequiredSpaceSqFt()
         {
-            Parrot parrot = new Parrot();
+            Parrot parrot = new Parrot(0);
             var requiredSpaceSqFt = parrot.RequiredSpaceSqFt;
             Assert.Equal(5, requiredSpaceSqFt);
         }
@@ -51,7 +51,7 @@ namespace ZooLabLibrary.Test.Animals.Birds
         [Fact]
         public void ShouldBeAbleToReturnFavouriteFood()
         {
-            Parrot parrot = new Parrot();
+            Parrot parrot = new Parrot(0);
             var favouriteFood = parrot.FavouriteFood;
             Assert.Contains("Vegetable", favouriteFood);
         }
@@ -59,8 +59,8 @@ namespace ZooLabLibrary.Test.Animals.Birds
         [Fact]
         public void ShouldBeAbleToAssessIsAnimalFriendlyOrNot()
         {
-            Parrot parrot = new Parrot();
-            Penguin penguin = new Penguin();
+            Parrot parrot = new Parrot(0);
+            Penguin penguin = new Penguin(1);
             Assert.False(parrot.IsFriendlyWith(penguin));
         }
 
@@ -68,7 +68,7 @@ namespace ZooLabLibrary.Test.Animals.Birds
         [Fact]
         public void ShouldBeAbleToFeedParrot()
         {
-            Parrot parrot = new Parrot();
+            Parrot parrot = new Parrot(0);
             parrot.IsHungry = true;
             Meat pieceOfMeat = new Meat();
             parrot.Feed(pieceOfMeat);
@@ -82,7 +82,7 @@ namespace ZooLabLibrary.Test.Animals.Birds
         [Fact]
         public void ShouldBeAbleToAddScheduale()
         {
-            Parrot parrot = new Parrot(isSick: true);
+            Parrot parrot = new Parrot(iD: 0, isSick: true);
             var hours = new List<int>() { 10, 15 };
             parrot.AddScheduale(hours);
             Assert.Contains(10, parrot.FeedScheduale);
@@ -93,7 +93,7 @@ namespace ZooLabLibrary.Test.Animals.Birds
         [Fact]
         public void ShouldBeAbleToHealParrot()
         {
-            Parrot parrot = new Parrot(isSick: true);
+            Parrot parrot = new Parrot(iD: 0, isSick: true);
             var antiDepression = new AntiDepression();
             parrot.Heal(antiDepression);
             Assert.False(parrot.IsSick);

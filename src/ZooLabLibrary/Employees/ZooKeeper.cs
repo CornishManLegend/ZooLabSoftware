@@ -1,4 +1,5 @@
 ﻿using ZooLabLibrary.Animals;
+using ZooLabLibrary.Console;
 
 
 namespace ZooLabLibrary.Employees;
@@ -7,6 +8,8 @@ public class ZooKeeper : IEmployee
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
+
+    public IConsole Console { get; set; } = new DefaultConsole();
 
     public List<Animal> AnimalExperiences { get; private set; } = new List<Animal>();
 
@@ -26,6 +29,7 @@ public class ZooKeeper : IEmployee
     public void AddAnimalExperience(Animal animal)
     {
         AnimalExperiences.Add(animal);
+        Console.WriteLine("ZooKeeper " + this.ToString() + " got a new experience with a " + animal.GetType().Name);
     }
 
     public bool HasAnimalExperience(Animal animal)

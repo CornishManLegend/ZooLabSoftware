@@ -14,20 +14,27 @@ namespace ZooLabLibrary
     public class Zoo
     {
 
-        //public IConsole Console { get; set; } = new DefaultConsole();
+        public IConsole Console { get; set; } = new DefaultConsole();
 
-        //public List<Enclosure> Enclosures { get; set; }
+        public List<Enclosure> Enclosures { get; private set; }
 
-        //public List<IEmployee> Employees { get; set; }
+        public List<IEmployee> Employees { get; private set; }
 
-        //public string Location { get; set; }
+        public string Location { get; private set; }
 
-        //public Zoo(string location)
-        //{
-        //    Location = location;
-        //    Enclosures = new List<Enclosure>();
-        //    Employees = new List<IEmployee>();
-        //}
+        public Zoo(string location)
+        {
+            Location = location;
+            Enclosures = new List<Enclosure>();
+            Employees = new List<IEmployee>();
+        }
+
+        public void AddEnclosure(Enclosure enclosure)
+        {
+            Enclosures.Add(enclosure);
+
+            Console.WriteLine("New Enclosure added: " + enclosure.Name);
+        }
 
         //public void HireEmployee(IEmployee employee)
         //{
@@ -36,12 +43,7 @@ namespace ZooLabLibrary
         //    Console.WriteLine("Employee Petrov Ivan is hired as a veterinar1");
         //}
 
-        //public void AddEnclosure(Enclosure enclosure)
-        //{
-        //    Enclosures.Add(enclosure);
 
-        //    Console.WriteLine("New Enclosure added: " + enclosure.Name);
-        //}
 
         //public Enclosure FindAvailableEnclosure(Animal animalWithoutEnclosure)
         //{

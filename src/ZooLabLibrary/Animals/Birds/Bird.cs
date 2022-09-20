@@ -3,13 +3,15 @@
     public abstract class Bird : Animal
     {
         protected Bird() {}
+        protected Bird(int iD) : base (iD)
+        { }
 
-        protected Bird(bool isSick)
+        protected Bird(int iD, bool isSick) : base(iD)
         {
             IsSick = isSick;
         }
 
-        protected Bird(bool isSick, bool isHungry)
+        protected Bird(int iD, bool isSick, bool isHungry) : base(iD)
         {
             IsSick = isSick;
             IsHungry = isHungry;

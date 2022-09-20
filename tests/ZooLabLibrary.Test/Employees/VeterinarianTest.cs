@@ -21,7 +21,7 @@ namespace ZooLabLibrary.Test.Employees
         [Fact]
         public void ShouldBeAbleToCreateVeterinarianWithExperiences()
         {
-            var experiences = new List<Animal>() { new Parrot(), new Penguin() };
+            var experiences = new List<Animal>() { new Parrot(0), new Penguin(1) };
 
             Veterinarian veterinarian = new Veterinarian(firstName: "John", lastName: "Silver", animalExperiences: experiences);
             Assert.NotNull(veterinarian);
@@ -47,8 +47,8 @@ namespace ZooLabLibrary.Test.Employees
         {
             Veterinarian veterinarian = new Veterinarian(firstName: "John", lastName: "Silver");
             veterinarian.AddAnimalExperience(new Parrot());
-            var parrot = new Parrot();
-            var penguin = new Penguin();
+            var parrot = new Parrot(1);
+            var penguin = new Penguin(2);
             Assert.True(veterinarian.HasAnimalExperience(parrot));
             Assert.False(veterinarian.HasAnimalExperience(penguin));
         }
@@ -58,9 +58,9 @@ namespace ZooLabLibrary.Test.Employees
         public void ShouldBeAbleToHealAnimal()
         {
             Veterinarian veterinarian = new Veterinarian(firstName: "John", lastName: "Silver");
-            veterinarian.AddAnimalExperience(new Parrot());
-            var parrot = new Parrot(isSick: true);
-            var penguin = new Penguin(isSick: true);
+            veterinarian.AddAnimalExperience(new Parrot(0));
+            var parrot = new Parrot(iD: 1, isSick: true);
+            var penguin = new Penguin(iD: 2, isSick: true);
             Assert.True(veterinarian.HealAnimal(parrot));
             Assert.False(parrot.IsSick);
             Assert.False(veterinarian.HealAnimal(penguin));
@@ -75,7 +75,6 @@ namespace ZooLabLibrary.Test.Employees
             var veterinarianFullName = veterinarian.ToString();
             Assert.Equal(0, string.Compare("John Silver", veterinarianFullName));
         }
-
 
     }
 }
