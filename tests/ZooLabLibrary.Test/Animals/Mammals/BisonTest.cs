@@ -37,7 +37,7 @@ namespace ZooLabLibrary.Test.Animals.Mammals
         }
 
         [Fact]
-        public void ShouldBeAbleToReturnRequiredSpaceSqFt()
+        public void ShouldBeAbleToReturnRequiredSpaceSqFtForBison()
         {
             Bison bison = new Bison(0);
             var requiredSpaceSqFt = bison.RequiredSpaceSqFt;
@@ -45,7 +45,7 @@ namespace ZooLabLibrary.Test.Animals.Mammals
         }
 
         [Fact]
-        public void ShouldBeAbleToReturnFavouriteFood()
+        public void ShouldBeAbleToReturnFavouriteFoodForBison()
         {
             Bison bison = new Bison(0);
             var favouriteFood = bison.FavouriteFood;
@@ -53,7 +53,7 @@ namespace ZooLabLibrary.Test.Animals.Mammals
         }
 
         [Fact]
-        public void ShouldBeAbleToAssessIsAnimalFriendlyOrNot()
+        public void ShouldBeAbleToAssessIsAnimalFriendlyOrNotWithBison()
         {
             Bison bison1 = new Bison(0);
             Bison bison2 = new Bison(1);
@@ -80,7 +80,7 @@ namespace ZooLabLibrary.Test.Animals.Mammals
 
 
         [Fact]
-        public void ShouldBeAbleToAddScheduale()
+        public void ShouldBeAbleToAddSchedualeForBison()
         {
             Bison bison = new Bison(iD: 0, isSick: true);
             var hours = new List<int>() { 10, 15 };

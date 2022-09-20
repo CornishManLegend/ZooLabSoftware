@@ -37,7 +37,7 @@ namespace ZooLabLibrary.Test.Animals.Mammals
         }
 
         [Fact]
-        public void ShouldBeAbleToReturnRequiredSpaceSqFt()
+        public void ShouldBeAbleToReturnRequiredSpaceSqFtForElephant()
         {
             Elephant elephant = new Elephant(0);
             var requiredSpaceSqFt = elephant.RequiredSpaceSqFt;
@@ -45,7 +45,7 @@ namespace ZooLabLibrary.Test.Animals.Mammals
         }
 
         [Fact]
-        public void ShouldBeAbleToReturnFavouriteFood()
+        public void ShouldBeAbleToReturnFavouriteFoodForElephant()
         {
             Elephant elephant = new Elephant(0);
             var favouriteFood = elephant.FavouriteFood;
@@ -54,7 +54,7 @@ namespace ZooLabLibrary.Test.Animals.Mammals
         }
 
         [Fact]
-        public void ShouldBeAbleToAssessIsAnimalFriendlyOrNot()
+        public void ShouldBeAbleToAssessIsAnimalFriendlyOrNotWithElephant()
         {
             Elephant elephant1 = new Elephant(0);
             Elephant elephant2 = new Elephant(1);
@@ -88,7 +88,7 @@ namespace ZooLabLibrary.Test.Animals.Mammals
 
 
         [Fact]
-        public void ShouldBeAbleToAddScheduale()
+        public void ShouldBeAbleToAddSchedualeForElephant()
         {
             Elephant elephant = new Elephant(iD: 0, isSick: true);
             var hours = new List<int>() { 10, 15 };

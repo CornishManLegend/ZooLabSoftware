@@ -17,14 +17,14 @@ namespace ZooLabLibrary.Test.Animals.Birds
     public class PenguinTest
     {
         [Fact]
-        public void ShouldBeAbleToCreateParrot()
+        public void ShouldBeAbleToCreatePenguin()
         {
             Penguin penguin = new Penguin();
             Assert.NotNull(penguin);
         }
 
         [Fact]
-        public void ShouldBeAbleToCreateSickParrot()
+        public void ShouldBeAbleToCreateSickPenguin()
         {
             Penguin penguin = new Penguin(iD: 0, isSick: true);
             Assert.NotNull(penguin);
@@ -32,7 +32,7 @@ namespace ZooLabLibrary.Test.Animals.Birds
         }
 
         [Fact]
-        public void ShouldBeAbleToCreateSickAndHungryParrot()
+        public void ShouldBeAbleToCreateSickAndHungryPenguin()
         {
             Penguin penguin = new Penguin(iD: 0, isSick: true, isHungry: true);
             Assert.NotNull(penguin);
@@ -41,7 +41,7 @@ namespace ZooLabLibrary.Test.Animals.Birds
         }
 
         [Fact]
-        public void ShouldBeAbleToReturnRequiredSpaceSqFt()
+        public void ShouldBeAbleToReturnRequiredSpaceSqFtForPenguin()
         {
             Penguin penguin = new Penguin(0);
             var requiredSpaceSqFt = penguin.RequiredSpaceSqFt;
@@ -49,7 +49,7 @@ namespace ZooLabLibrary.Test.Animals.Birds
         }
 
         [Fact]
-        public void ShouldBeAbleToReturnFavouriteFood()
+        public void ShouldBeAbleToReturnFavouriteFoodForPenguin()
         {
             Penguin penguin = new Penguin(0);
             var favouriteFood = penguin.FavouriteFood;
@@ -58,7 +58,7 @@ namespace ZooLabLibrary.Test.Animals.Birds
         }
 
         [Fact]
-        public void ShouldBeAbleToAssessIsAnimalFriendlyOrNot()
+        public void ShouldBeAbleToAssessIsAnimalFriendlyOrNotWithPenguin()
         {
 
             Penguin penguin = new Penguin(0);
@@ -82,7 +82,7 @@ namespace ZooLabLibrary.Test.Animals.Birds
 
 
         [Fact]
-        public void ShouldBeAbleToAddScheduale()
+        public void ShouldBeAbleToAddSchedualeForPenguin()
         {
             Penguin penguin = new Penguin(0);
             var hours = new List<int>() { 10, 15 };
@@ -93,7 +93,7 @@ namespace ZooLabLibrary.Test.Animals.Birds
 
 
         [Fact]
-        public void ShouldBeAbleToHealParrot()
+        public void ShouldBeAbleToHealPenguin()
         {
             Penguin penguin = new Penguin(iD: 0, isSick: true);
             var antiInflammatory = new AntiInflammatory();

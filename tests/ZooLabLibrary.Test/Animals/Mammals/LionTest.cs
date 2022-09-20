@@ -37,7 +37,7 @@ namespace ZooLabLibrary.Test.Animals.Mammals
         }
 
         [Fact]
-        public void ShouldBeAbleToReturnRequiredSpaceSqFt()
+        public void ShouldBeAbleToReturnRequiredSpaceSqFtForLion()
         {
             Lion lion = new Lion(0);
             var requiredSpaceSqFt = lion.RequiredSpaceSqFt;
@@ -45,7 +45,7 @@ namespace ZooLabLibrary.Test.Animals.Mammals
         }
 
         [Fact]
-        public void ShouldBeAbleToReturnFavouriteFood()
+        public void ShouldBeAbleToReturnFavouriteFoodForLion()
         {
             Lion lion = new Lion(0);
             var favouriteFood = lion.FavouriteFood;
@@ -53,7 +53,7 @@ namespace ZooLabLibrary.Test.Animals.Mammals
         }
 
         [Fact]
-        public void ShouldBeAbleToAssessIsAnimalFriendlyOrNot()
+        public void ShouldBeAbleToAssessIsAnimalFriendlyOrNotWithLion()
         {
             Lion lion = new Lion(0);
             Penguin penguin = new Penguin(1);
@@ -76,7 +76,7 @@ namespace ZooLabLibrary.Test.Animals.Mammals
 
 
         [Fact]
-        public void ShouldBeAbleToAddScheduale()
+        public void ShouldBeAbleToAddSchedualeForLion()
         {
             Lion lion = new Lion(iD: 0, isSick: true);
             var hours = new List<int>() { 10, 15 };

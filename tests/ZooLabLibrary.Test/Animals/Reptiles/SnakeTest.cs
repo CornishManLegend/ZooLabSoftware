@@ -38,7 +38,7 @@ namespace ZooLabLibrary.Test.Animals.Reptiles
         }
 
         [Fact]
-        public void ShouldBeAbleToReturnRequiredSpaceSqFt()
+        public void ShouldBeAbleToReturnRequiredSpaceSqFtForSnake()
         {
             Snake snake = new Snake(0);
             var requiredSpaceSqFt = snake.RequiredSpaceSqFt;
@@ -46,7 +46,7 @@ namespace ZooLabLibrary.Test.Animals.Reptiles
         }
 
         [Fact]
-        public void ShouldBeAbleToReturnFavouriteFood()
+        public void ShouldBeAbleToReturnFavouriteFoodForSnake()
         {
             Snake snake = new Snake(0);
             var favouriteFood = snake.FavouriteFood;
@@ -54,7 +54,7 @@ namespace ZooLabLibrary.Test.Animals.Reptiles
         }
 
         [Fact]
-        public void ShouldBeAbleToAssessIsAnimalFriendlyOrNot()
+        public void ShouldBeAbleToAssessIsAnimalFriendlyOrNotWithSnake()
         {
             Snake snake = new Snake(0);
             Penguin penguin = new Penguin(1);
@@ -78,7 +78,7 @@ namespace ZooLabLibrary.Test.Animals.Reptiles
 
 
         [Fact]
-        public void ShouldBeAbleToAddScheduale()
+        public void ShouldBeAbleToAddSchedualeForSnake()
         {
             Snake snake = new Snake(iD: 0, isSick: true);
             var hours = new List<int>() { 10, 15 };

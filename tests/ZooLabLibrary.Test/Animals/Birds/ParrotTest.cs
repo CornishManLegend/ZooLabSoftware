@@ -41,7 +41,7 @@ namespace ZooLabLibrary.Test.Animals.Birds
         }
 
         [Fact]
-        public void ShouldBeAbleToReturnRequiredSpaceSqFt()
+        public void ShouldBeAbleToReturnRequiredSpaceSqFtForParrot()
         {
             Parrot parrot = new Parrot(0);
             var requiredSpaceSqFt = parrot.RequiredSpaceSqFt;
@@ -49,7 +49,7 @@ namespace ZooLabLibrary.Test.Animals.Birds
         }
 
         [Fact]
-        public void ShouldBeAbleToReturnFavouriteFood()
+        public void ShouldBeAbleToReturnFavouriteFoodForParrot()
         {
             Parrot parrot = new Parrot(0);
             var favouriteFood = parrot.FavouriteFood;
@@ -57,7 +57,7 @@ namespace ZooLabLibrary.Test.Animals.Birds
         }
 
         [Fact]
-        public void ShouldBeAbleToAssessIsAnimalFriendlyOrNot()
+        public void ShouldBeAbleToAssessIsAnimalFriendlyOrNotWithParrot()
         {
             Parrot parrot = new Parrot(0);
             Penguin penguin = new Penguin(1);
@@ -80,7 +80,7 @@ namespace ZooLabLibrary.Test.Animals.Birds
 
 
         [Fact]
-        public void ShouldBeAbleToAddScheduale()
+        public void ShouldBeAbleToAddSchedualeForParrot()
         {
             Parrot parrot = new Parrot(iD: 0, isSick: true);
             var hours = new List<int>() { 10, 15 };
