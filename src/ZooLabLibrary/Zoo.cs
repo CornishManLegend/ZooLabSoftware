@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZooLab.Animals;
 using ZooLabLibrary.Animals;
 using ZooLabLibrary.Console;
 using ZooLabLibrary.Employees;
 using ZooLabLibrary.Enclosures;
 using ZooLabLibrary.Exceptions;
+using ZooLabLibrary.Validators.HireValidators;
 
 namespace ZooLabLibrary
 {
@@ -15,6 +17,8 @@ namespace ZooLabLibrary
     {
 
         public IConsole Console { get; set; } = new DefaultConsole();
+
+        private HireValidatorProvider _hireValidatorProvider;
 
         public List<Enclosure> Enclosures { get; private set; }
 
@@ -27,6 +31,7 @@ namespace ZooLabLibrary
             Location = location;
             Enclosures = new List<Enclosure>();
             Employees = new List<IEmployee>();
+            _hireValidatorProvider = new HireValidatorProvider(this);
         }
 
         public void AddEnclosure(Enclosure enclosure)
@@ -36,39 +41,104 @@ namespace ZooLabLibrary
             Console.WriteLine("New Enclosure added: " + enclosure.Name);
         }
 
-        //public void HireEmployee(IEmployee employee)
-        //{
-        //    Employees.Add(employee);
 
-        //    Console.WriteLine("Employee Petrov Ivan is hired as a veterinar1");
-        //}
+        public Enclosure FindAvailableEnclosure(Animal animal)
+        {
+            foreach (var enclosure in Enclosures)
+            {
+                var enclosuresSquareFeet = enclosure.SquareFeet;
+
+                foreach (var enclosuresAnimal in enclosure.Animals)
+                {
+                    if(enclosuresAnimal.IsFriendlyWith(animal))
+                        enclosuresSquareFeet -= enclosuresAnimal.RequiredSpaceSqFt;
+                    else
+                        enclosuresSquareFeet = 0;
+                }
+
+                if (enclosuresSquareFeet >= animal.RequiredSpaceSqFt)
+                    return enclosure;
+            }
+            throw new NoAvailableEnclosureException("There is no available enclosure in the zoo " 
+            + Location + " for the animal " + animal.GetType().Name + " " + animal.ID);
+        }
 
 
+        public void HireEmployee(IEmployee employee)
+        {
+            if (_hireValidatorProvider.GetHireValidator(employee).ValidateEmployee(employee).Count == 0)
+            {
+                Employees.Add(employee);
 
-        //public Enclosure FindAvailableEnclosure(Animal animalWithoutEnclosure)
-        //{
-        //    foreach (var enclosure in Enclosures)
-        //    {
-        //        int availableSquare = enclosure.SquareFeet;
+                Console.WriteLine("New Employee added: " + employee.FirstName + " " + employee.LastName + " in zoo " + Location);
+            }
+            else
+            {
+                throw new NoNeededExperienceException("The employee " + employee.FirstName + " " + employee.LastName + " is not needed due to lack of experience");
+            }
 
-        //        foreach (var animal in enclosure.Animals)
-        //        {
-        //            if (animalWithoutEnclosure.IsFriendlyWithAnimal(animal))
-        //                availableSquare -= animal.RequiredSpaceSqFt;
-        //            else
-        //                availableSquare = -1;
-        //        }
+        }
 
-        //        if (availableSquare >= animalWithoutEnclosure.RequiredSpaceSqFt)
-        //        {
 
-        //            return enclosure;
-        //        }
+        public void FeedAnimals()
+        {
+            var zooKeepers = new List<ZooKeeper>();
+            foreach(var employee in Employees)
+            {
+                if(employee is ZooKeeper zooKeeper)
+                {
+                    zooKeepers.Add(zooKeeper);
+                }
+            }
 
-        //    }
+            if (zooKeepers.Count > 0)
+            {
+                int zookeeperIndex = 0;
+                foreach (var enclosure in Enclosures)
+                {
+                    foreach (var enclosureAnimal in enclosure.Animals)
+                    {
+                        zooKeepers[zookeeperIndex].FeedAnimal(enclosureAnimal);
+                        zookeeperIndex++;
+                        if (zookeeperIndex >= zooKeepers.Count)
+                        {
+                            zookeeperIndex = 0;
+                        }
+                    }
+                }
+            }
+        }
 
-        //    throw new NoAvailableEnclosureException("There is no enclosure available");
-        //}
+
+        public void HealAnimals()
+        {
+            var veterinarians = new List<Veterinarian>();
+            foreach (var employee in Employees)
+            {
+                if (employee is Veterinarian veterinarian)
+                {
+                    veterinarians.Add(veterinarian);
+                }
+            }
+
+            if (veterinarians.Count > 0)
+            {
+                int veterinarianIndex = 0;
+                foreach (var enclosure in Enclosures)
+                {
+                    foreach (var enclosureAnimal in enclosure.Animals)
+                    {
+                        veterinarians[veterinarianIndex].HealAnimal(enclosureAnimal);
+                        veterinarianIndex++;
+                        if (veterinarianIndex >= veterinarians.Count)
+                        {
+                            veterinarianIndex = 0;
+                        }
+                    }
+                }
+            }
+        }
+
 
     }
 }
