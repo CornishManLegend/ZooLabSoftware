@@ -9,9 +9,10 @@ namespace ZooLab.Animals
 
         public ZooKeeper? FeedBy { get; set; }
 
-        public FeedTime(DateTime feedTime)
+        public FeedTime(DateTime feedTime, ZooKeeper zooKeeper)
         {
             Time = feedTime;
+            FeedBy = zooKeeper;
         }
 
         public ZooKeeper FeedByZooKeeper(ZooKeeper zooKeeper)

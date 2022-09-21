@@ -1,4 +1,5 @@
-﻿using ZooLabLibrary.Animals;
+﻿using ZooLab.Animals;
+using ZooLabLibrary.Animals;
 using ZooLabLibrary.Console;
 
 
@@ -49,6 +50,9 @@ public class ZooKeeper : IEmployee
         if (animal.IsHungry && this.HasAnimalExperience(animal))
         {
             animal.IsHungry = false;
+            animal.FeedTimes.Add(new FeedTime(DateTime.Now, this));
+            Console.WriteLine("The" + animal.GetType().Name + " " + animal.ID 
+                + " was fed by zooKeeper " + FirstName + " " + LastName);
             return true;
         }
         return false;

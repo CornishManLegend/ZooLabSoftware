@@ -61,6 +61,7 @@ namespace ZooLabLibrary.Test.Employees
             var penguin = new Penguin(2);
             penguin.IsHungry = true;
             Assert.True(zooKeeper.FeedAnimal(parrot));
+            Assert.Equal(zooKeeper, parrot.FeedTimes[0].FeedBy);
             Assert.False(parrot.IsHungry);
             Assert.False(zooKeeper.FeedAnimal(penguin));
             Assert.True(penguin.IsHungry);
