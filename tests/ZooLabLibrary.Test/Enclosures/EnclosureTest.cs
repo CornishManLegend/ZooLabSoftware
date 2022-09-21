@@ -10,7 +10,6 @@ using ZooLabLibrary.Animals;
 using ZooLabLibrary.Enclosures;
 using System.Xml.Linq;
 using ZooLabLibrary.Exceptions;
-using ZooLabLibrary.Validators.HireValidators;
 
 namespace ZooLabLibrary.Test.Enclosures
 {
