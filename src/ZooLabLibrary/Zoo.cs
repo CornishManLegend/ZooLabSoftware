@@ -50,7 +50,7 @@ namespace ZooLabLibrary
 
                 foreach (var enclosuresAnimal in enclosure.Animals)
                 {
-                    if(enclosuresAnimal.IsFriendlyWith(animal))
+                    if(enclosuresAnimal.IsFriendlyWith(animal) && animal.IsFriendlyWith(enclosuresAnimal))
                         enclosuresSquareFeet -= enclosuresAnimal.RequiredSpaceSqFt;
                     else
                         enclosuresSquareFeet = 0;
