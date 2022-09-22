@@ -13,7 +13,7 @@ namespace ZooLabLibrary
         {
             zoos.Add(zoo);
 
-            Console.WriteLine("New zoo added in zoo app.");
+            Console.WriteLine("New zoo located in " + zoo.Location + " added to Zoo Corporation");
         }
 
         public List<Zoo> GetZoos()

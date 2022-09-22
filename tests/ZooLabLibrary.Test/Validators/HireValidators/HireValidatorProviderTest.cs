@@ -58,6 +58,7 @@ namespace ZooLabLibrary.Test.Validators.HireValidators
                 FirstName = firstName;
                 LastName = lastName;
             }
+            public IConsole Console { get; set; } = new DefaultConsole();
         }
 
     }

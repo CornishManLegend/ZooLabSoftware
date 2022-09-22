@@ -48,6 +48,10 @@ public class Veterinarian : IEmployee
         if(animal.IsSick && this.HasAnimalExperience(animal))
         {
             animal.IsSick = false;
+
+            //Console.WriteLine("The" + animal.GetType().Name + " " + animal.ID
+            //    + " was healed by Veterinarian " + this.ToString());
+
             return true;
         }
         return false;

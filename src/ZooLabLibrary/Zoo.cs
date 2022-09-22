@@ -38,7 +38,7 @@ namespace ZooLabLibrary
         {
             Enclosures.Add(enclosure);
 
-            Console.WriteLine("New Enclosure added: " + enclosure.Name);
+            Console.WriteLine("New Enclosure added: " + enclosure.Name + " to zoo in " + enclosure.ParentZoo.Location);
         }
 
 
@@ -99,6 +99,8 @@ namespace ZooLabLibrary
                     foreach (var enclosureAnimal in enclosure.Animals)
                     {
                         zooKeepers[zookeeperIndex].FeedAnimal(enclosureAnimal);
+                        Console.WriteLine("The " + enclosureAnimal.GetType().Name + " " + enclosureAnimal.ID + " in zoo " + Location 
+                            + " was fed by zooKeeper " + zooKeepers[zookeeperIndex].ToString());
                         zookeeperIndex++;
                         if (zookeeperIndex >= zooKeepers.Count)
                         {
@@ -123,12 +125,16 @@ namespace ZooLabLibrary
 
             if (veterinarians.Count > 0)
             {
+                
                 int veterinarianIndex = 0;
                 foreach (var enclosure in Enclosures)
                 {
                     foreach (var enclosureAnimal in enclosure.Animals)
                     {
+                        
                         veterinarians[veterinarianIndex].HealAnimal(enclosureAnimal);
+                        Console.WriteLine("The " + enclosureAnimal.GetType().Name + " " + enclosureAnimal.ID + " in zoo " + Location
+                            + " was healed by Veterinarian " + veterinarians[veterinarianIndex].ToString());
                         veterinarianIndex++;
                         if (veterinarianIndex >= veterinarians.Count)
                         {
