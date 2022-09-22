@@ -27,7 +27,7 @@ namespace ZooLabLibrary.Test.Exceptions
                 new NoAvailableEnclosureException("No Available Enclosure Exception");
             var output = stringWriter.ToString();
             Assert.NotNull(noAvailableEnclosureException);
-            Assert.Equal("No Available Enclosure Exception\r\n", output);
+            Assert.Equal("No Available Enclosure Exception\n", output);
         }
     }
 }

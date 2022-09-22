@@ -25,7 +25,7 @@ namespace ZooLabLibrary.Test.Exceptions
                 new NotFriendlyAnimalException("Not Friendly Animal Exception");
             var output = stringWriter.ToString();
             Assert.NotNull(notFriendlyAnimalException);
-            Assert.Equal("Not Friendly Animal Exception\r\n", output);
+            Assert.Equal("Not Friendly Animal Exception\n", output);
         }
     }
 }

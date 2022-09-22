@@ -25,7 +25,7 @@ namespace ZooLabLibrary.Test.Exceptions
                 new NoNeededExperienceException("No Needed Experience Exception");
             var output = stringWriter.ToString();
             Assert.NotNull(noNeededExperienceException);
-            Assert.Equal("No Needed Experience Exception\r\n", output);
+            Assert.Equal("No Needed Experience Exception\n", output);
         }
     }
 }

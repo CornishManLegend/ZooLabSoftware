@@ -25,7 +25,7 @@ namespace ZooLabLibrary.Test.Exceptions
                 new NoAvailableSpaceException("No Available Space Exception");
             var output = stringWriter.ToString();
             Assert.NotNull(noAvailableSpaceException);
-            Assert.Equal("No Available Space Exception\r\n", output);
+            Assert.Equal("No Available Space Exception\n", output);
         }
     }
 }
