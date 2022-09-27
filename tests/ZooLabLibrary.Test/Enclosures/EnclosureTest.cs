@@ -33,7 +33,7 @@ namespace ZooLabLibrary.Test.Enclosures
         }
 
         [Fact]
-        public void ShouldNotBeAbleToAddAnimal()
+        public void ShouldBeAbleToAddAnimal()
         {
             Zoo zoo = new Zoo("New York");
             List<Animal> animalsList = new List<Animal>() { new Parrot(), new Elephant() };
@@ -48,7 +48,7 @@ namespace ZooLabLibrary.Test.Enclosures
         }
 
         [Fact]
-        public void ShouldNotBeAbleToThrowExeptionWhenAddAnimalInEnclosureWithoutEnoughSpace()
+        public void ShouldBeAbleToThrowExeptionWhenAddAnimalInEnclosureWithoutEnoughSpace()
         {
             Zoo zoo = new Zoo("New York");
             Enclosure enclosure = new Enclosure("test enclosure", zoo, 100);
@@ -56,7 +56,7 @@ namespace ZooLabLibrary.Test.Enclosures
         }
 
         [Fact]
-        public void ShouldNotBeAbleToThrowExeptionWhenAddAnimalInEnclosureWithNotFriendlyAnimals()
+        public void ShouldBeAbleToThrowExeptionWhenAddAnimalInEnclosureWithNotFriendlyAnimals()
         {
             Zoo zoo = new Zoo("New York");
             List<Animal> animalsList = new List<Animal>() { new Turtle(), new Parrot(), new Elephant() };
@@ -65,7 +65,7 @@ namespace ZooLabLibrary.Test.Enclosures
         }
 
         [Fact]
-        public void ShouldNotBeAbleToThrowExeptionWhenAddAnimalInEnclosureWhereAnimalsNotFriendly()
+        public void ShouldBeAbleToThrowExeptionWhenAddAnimalInEnclosureWhereAnimalsNotFriendly()
         {
             Zoo zoo = new Zoo("New York");
             List<Animal> animalsList = new List<Animal>() { new Bison(), new Bison() };
